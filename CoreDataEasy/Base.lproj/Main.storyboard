@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mWQ-QN-ZM4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="uMF-Lh-V8b">
+            <objects>
+                <navigationController id="mWQ-QN-ZM4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yog-9P-5vE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1uQ-EG-yr8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4K-K3-PNY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1235" y="115"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreDataEasy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0d-dy-Yu6">
+                                <rect key="frame" x="165.5" y="189" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1LO-MM-HWp">
+                                <rect key="frame" x="20" y="260" width="374" height="602"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1LO-MM-HWp" secondAttribute="bottom" id="3Zu-uI-2vB"/>
+                            <constraint firstItem="1LO-MM-HWp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="O7v-tx-bp2"/>
+                            <constraint firstItem="1LO-MM-HWp" firstAttribute="top" secondItem="j0d-dy-Yu6" secondAttribute="bottom" constant="50" id="YXc-Ky-37Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1LO-MM-HWp" secondAttribute="trailing" constant="20" id="voF-wp-uHd"/>
+                            <constraint firstItem="j0d-dy-Yu6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="xWw-fA-BNY"/>
+                            <constraint firstItem="j0d-dy-Yu6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zxY-Fc-q8C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Amv-Bb-azh">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Add Device" id="D6J-sS-CGr">
+                                <connections>
+                                    <action selector="addDevice:" destination="BYZ-38-t0r" id="vpm-gL-poh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Add User" id="hzA-us-qTq">
+                                <connections>
+                                    <action selector="addUser:" destination="BYZ-38-t0r" id="bAZ-pp-ifH"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Delete" id="RTp-y8-aEL">
+                                <connections>
+                                    <action selector="deleteTap:" destination="BYZ-38-t0r" id="5yB-U3-WfJ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="stackView" destination="1LO-MM-HWp" id="haa-jU-ase"/>
+                        <outlet property="userLabel" destination="j0d-dy-Yu6" id="sXs-xm-Rgm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369.56521739130437" y="107.8125"/>
+        </scene>
+    </scenes>
+</document>
