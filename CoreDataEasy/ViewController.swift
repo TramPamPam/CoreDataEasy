@@ -61,7 +61,9 @@ class ViewController: UIViewController {
     @IBAction func deleteTap(_ sender: Any) {
         if let user = self.user {
             coreData.persistentContainer.viewContext.delete(user)
+            saveCoreData()
         }
+
     }
 
     private func saveCoreData() {
