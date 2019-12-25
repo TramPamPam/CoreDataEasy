@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     let coreData = CoreDataStack.shared
     var user: User?
     var counter: Int = 0
+    
     // MARK: - IBOutlets
     @IBOutlet private weak var userLabel: UILabel!
 
@@ -32,6 +34,16 @@ class ViewController: UIViewController {
         saveCoreData()
 
         userLabel.text = user?.name
+
+        let fetchUsers: NSFetchRequest<User> = User.fetchRequest()
+        fetchUsers.fetchLimit = 1
+        fetchUsers.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        do {
+            let users = try coreData.persistentContainer.viewContext.fetch(fetchUsers)
+            debugPrint("Users: \(String(describing: users))")
+        } catch {
+            debugPrint("error \(error)")
+        }
     }
 
     @IBAction private func addDevice(_ sender: Any) {
@@ -54,6 +66,8 @@ class ViewController: UIViewController {
             label.text = device.model
             stackView.addArrangedSubview(label)
         }
+
+
 
 
     }

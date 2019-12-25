@@ -15,7 +15,7 @@
         <relationship name="devices" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Device" inverseName="owner" inverseEntity="Device"/>
     </entity>
     <elements>
-        <element name="User" positionX="-145.67578125" positionY="-169.5390625" width="128" height="133"/>
         <element name="Device" positionX="128.51953125" positionY="-153.28125" width="128" height="103"/>
+        <element name="User" positionX="-145.67578125" positionY="-169.5390625" width="128" height="133"/>
     </elements>
 </model>

@@ -22,7 +22,7 @@ class CoreDataStack {
                 debugPrint(error)
                 return
             }
-            // debugPrint(persistentStoreDescription)
+             debugPrint(persistentStoreDescription)
             container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         })
         return container
